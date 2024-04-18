@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #e0dede;
+}
+
+h1{
+    text-align: center;
+    margin: 20px;
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.main{
+    border: 3px solid rgb(99, 98, 98);
+    border-radius: 5px;
+    background-color: rgb(240, 239, 239);
+    width: 50%;
+    margin: 1rem 20rem;
+    padding: 2rem 8rem;
+
+}
+
+label{
+    font-weight: 500;
+    font-size: 1.5rem; 
+}
+
+#searchBy{
+    width: 70%;
+    padding: 0.4rem 1.2rem;
+    border-radius: 5px;
+    border-color: rgb(134, 133, 132);
+    outline-color: rgb(134, 133, 132);
+    font-weight: 500;
+}
+
+input{
+    margin: 1rem;
+    width: 60%;
+    padding: 0.3rem 1.2rem;
+    border-radius: 5px;
+    border-color: rgb(134, 133, 132);
+    outline-color: rgb(134, 133, 132);
+    font-weight: 500;
+}
+
+
+.btn{
+    width: 30%;
+}

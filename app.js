@@ -109,27 +109,53 @@ arr.map((render,index) => {
 
 })
 
-function search_filter(){
+// function search_filter(){
 
-    const dropdown = document.getElementById("Dropdown").value;
-    const search = document.getElementById("search-bar").value.toLowerCase();
-    // const list_items = document.getElementById("list_items");
+//     const dropdown = document.getElementById("Dropdown").value;
+//     const search = document.getElementById("search-bar").value.toLowerCase();
+//     // const list_items = document.getElementById("list_items");
 
-    const filtered_array = arr.filter((current_object) => {
-        if (dropdown === "brand") {
-            return current_object.brand.toLowerCase() === search;
-        } else if (dropdown === "model") {
-            return current_object.model.toLowerCase() === search;
-        } else if (dropdown === "price") {
-            return current_object.price.toLowerCase() === search;
-        } else if (dropdown === "camera") {
-            return current_object.camera.toLowerCase() === search;
-        }
+//     const filtered_array = arr.filter((current_object) => {
+//         if (dropdown === "brand") {
+//             return current_object.brand.toLowerCase() === search;
+//         } else if (dropdown === "model") {
+//             return current_object.model.toLowerCase() === search;
+//         } else if (dropdown === "price") {
+//             return current_object.price.toLowerCase() === search;
+//         } else if (dropdown === "camera") {
+//             return current_object.camera.toLowerCase() === search;
+//         }
 
-    });
+//     });
 
-    console.log(filtered_array);
+//     console.log(filtered_array);
 
-};
+// };
   
-search_filter();
+// search_filter();
+
+
+function searchMobiles() {
+    const searchBy = document.getElementById("searchBy").value;
+    const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    const mobilesList = document.getElementById("mobilesList");
+    mobilesList.innerHTML = ""; // Clear previous results
+
+    const filteredMobiles = arr.filter(mobile => mobile[searchBy].toLowerCase().includes(searchInput));
+    
+    if (filteredMobiles.length === 0) {
+        mobilesList.innerHTML = "No matching mobile phones found.";
+    } else {
+        filteredMobiles.forEach(mobile => {
+            const mobileDetails = document.createElement("div");
+            mobileDetails.innerHTML = `
+                <h3>${mobile.brand} ${mobile.model}</h3>
+                <p>Price: ${mobile.price}</p>
+                <p>Camera: ${mobile.camera}</p>
+                <p>RAM: ${mobile.ram}</p>
+                <p>ROM: ${mobile.rom}</p>
+            `;
+            mobilesList.appendChild(mobileDetails);
+        });
+    }
+}
